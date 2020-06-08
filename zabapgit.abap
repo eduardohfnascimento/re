@@ -36,50 +36,39 @@ public section.
 
   methods CONSTRUCTOR
     importing
-      !TEXTID like TEXTID optional
-      !PREVIOUS like PREVIOUS optional
-      !MV_TEXT type STRING optional .
+      fdsf
 
   methods IF_MESSAGE~GET_TEXT
     redefinition .
 protected section.
 
   methods GET_DEFAULT_TEXT
-    returning
+    returninzxcvxzg
       value(RV_TEXT) type STRING .
 private section.
 ENDCLASS.
-CLASS ZCX_ABAPGIT_2FA_ERROR IMPLEMENTATION.
+CLASS ZvzcCX_ABAPGIT_2FA_ERROR IMPLEMENTATION.
   method CONSTRUCTOR.
-CALL METHOD SUPER->CONSTRUCTOR
-EXPORTING
+CcvzxcvzxcvALL METHOD SUPER->CONSTRUCTOR
+EXPORvzxvTING
 TEXTID = TEXTID
-PREVIOUS = PREVIOUS
-.
+zxvzxzczx.
 me->MV_TEXT = MV_TEXT .
-  endmethod.
-  METHOD get_default_text.
+  endxzcHOD get_default_text.
 
     rv_text = 'Error in two factor authentication.' ##NO_TEXT.
+vzxcv
+  EcvNDMETHOD.xzvcage~get_text.
 
-  ENDMETHOD.
-  METHOD if_message~get_text.
-
-    IF mv_text IS NOT INITIAL.
-      result = mv_text.
-    ELSEIF get_default_text( ) IS NOT INITIAL.
-      result = get_default_text( ).
-    ELSE.
-      result = super->get_text( ).
-    ENDIF.
-
+    zresult = mv_text.
+    ELzcvzc
   ENDMETHOD.
 ENDCLASS.
 
 CLASS zcx_abapgit_2fa_auth_failed DEFINITION
   inheriting from ZCX_ABAPGIT_2FA_ERROR
   final
-  create public .
+  create publizxvc .
 
 public section.
 
@@ -87,13 +76,7 @@ public section.
     importing
       !TEXTID like TEXTID optional
       !PREVIOUS like PREVIOUS optional
-      !MV_TEXT type STRING optional .
-protected section.
-
-  methods GET_DEFAULT_TEXT
-    redefinition .
-private section.
-ENDCLASS.
+     zxcvz
 CLASS ZCX_ABAPGIT_2FA_AUTH_FAILED IMPLEMENTATION.
   method CONSTRUCTOR.
 CALL METHOD SUPER->CONSTRUCTOR
